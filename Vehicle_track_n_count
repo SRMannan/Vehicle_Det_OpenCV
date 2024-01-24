@@ -70,6 +70,15 @@ while True:
                 if id not in cnt:
                     cnt.append(id)
 
+        if cy2 < (cy+offset) and cy2 > (cy-offset):
+            v_u[id] = cy
+        if id in v_u:
+            if cy1 < (cy+offset) and cy1 > (cy-offset):
+                cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+                cv2.putText(frame, str(id), (cx, cy), cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2)
+                if id not in cnt:
+                    cnt.append(id)
+
 
     ## to Draw the chkpt lines and texting them
     cv2.line(frame,(241,cy1),(823,cy1),(255,255,255),1)
@@ -78,10 +87,10 @@ while True:
     cv2.line(frame,(142,cy2),(927,cy2),(255,255,255),1)
 
     tc = str(len(cnt))
-    cv2.putText(frame , tc , (10,10) , cv2.FONT_HERSHEY_COMPLEX , 0.4 , (125,125,255) , 1)
+    cv2.putText(frame , ('Tracker_Count : ') + tc , (25,25) , cv2.FONT_HERSHEY_COMPLEX , 0.5 , (125,125,255) , 2)
 
     cv2.imshow("RGB", frame)
-    if cv2.waitKey(0) & 0xFF == 27:
+    if cv2.waitKey(50) & 0xFF == 27:
         break
 cap.release()
 cv2.destroyAllWindows()
