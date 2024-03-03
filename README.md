@@ -1,10 +1,8 @@
 # Vehicle_Det_OpenCV
-Welcome to the OpenCV Computer Vision Snippets repository! This collection provides ready-to-use code snippets for object detection, tracking, speed estimation, and direction estimation using OpenCV.
+Overview
+This project employs OpenCV for vehicle detection, speed tracking, and number plate recognition. It analyzes video feeds or images, identifying vehicles, tracking their speed, and extracting number plate information.
 
-Usage
-Explore the code_snippets directory for snippets on:
-
-Object Detection
-Object Tracking
-Speed Estimation
-Direction Estimation
+Features
+Vehicle Detection: Identifies and outlines vehicles.
+Speed Tracking: Estimates vehicle speed in video streams.
+Number Plate Detection: Recognizes number plates from detected vehicles.
